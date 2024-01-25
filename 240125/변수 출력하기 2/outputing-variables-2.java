@@ -3,7 +3,7 @@ public class Main {
         int a=3;
         String b="C";
 
-        System.out.printf("%s!...!%d", b, a);
+        System.out.printf("%s!....!%d", b, a);
 
     }
 }
