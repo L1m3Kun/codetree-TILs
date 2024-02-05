@@ -1,0 +1,1 @@
+print(__import__("sys").stdin.readline().strip().replace(__import__("sys").stdin.readline().strip(), ""))
