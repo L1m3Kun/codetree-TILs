@@ -5,6 +5,6 @@ input = sys.stdin.readline
 s = input().strip()
 p = input().strip()
 
-for _ in range(len(s)-len(p)):
+while p in s:
     s = s.replace(p, "")
 print(s)
