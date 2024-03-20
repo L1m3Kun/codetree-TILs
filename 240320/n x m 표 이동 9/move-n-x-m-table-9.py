@@ -16,10 +16,8 @@ def bfs(one:int, is_end:bool) -> int:
     if is_end:
         while que:
             i, j, is_visit = que.popleft()
-            if i == N-2 and j == M-1:
-                return visited[N-2][M-1]
-            if i == N-1 and j == M-2:
-                return visited[N-1][M-2] 
+            if i == N-2 and j == M-1 or i == N-1 and j == M-2:
+                return visited[i][j][0] + 1
             for di, dj in [(1,0),(0,1),(-1,0), (0,-1)]:
                 ni, nj = i+di, j+dj
                 if 0 <= ni < N and 0 <= nj < M:
