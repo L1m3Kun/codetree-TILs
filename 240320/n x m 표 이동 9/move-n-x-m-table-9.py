@@ -17,9 +17,9 @@ def bfs(one:int, is_end:bool) -> int:
         while que:
             i, j, is_visit = que.popleft()
             if i == N-2 and j == M-1:
-                return visited[N-2][M-1][0] + 1
+                return visited[N-2][M-1]
             if i == N-1 and j == M-2:
-                return visited[N-1][M-2][0] + 1
+                return visited[N-1][M-2] 
             for di, dj in [(1,0),(0,1),(-1,0), (0,-1)]:
                 ni, nj = i+di, j+dj
                 if 0 <= ni < N and 0 <= nj < M:
