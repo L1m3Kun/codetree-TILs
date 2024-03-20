@@ -30,7 +30,10 @@ def bfs(one:int, is_end:bool) -> int:
         while que:
             i, j, is_visit = que.popleft()
             if i == N-1 and j == M-1:
-                return min(visited[N-1][M-1])
+                if is_visit:
+                    return visited[N-1][M-1][1]
+                else:
+                    return visited[N-1][M-1][0]
             for di, dj in [(0,1),(1,0),(0,-1), (-1,0)]:
                 ni, nj = i+di, j+dj
                 if 0 <= ni < N and 0 <= nj < M:
