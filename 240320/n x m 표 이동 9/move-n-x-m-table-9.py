@@ -8,7 +8,7 @@ metrix = [tuple(map(int, input().split())) for _ in range(N)]
 
 def bfs(one:int, is_end:bool) -> int:
     que = deque([(0,0, one)])
-    visited = [[[50000, 50000] for _ in range(M)] for _ in range(N)]
+    visited = [[[0,0] for _ in range(M)] for _ in range(N)]
     if one:
         visited[0][0] = [0,1]
     else:
@@ -23,7 +23,7 @@ def bfs(one:int, is_end:bool) -> int:
             for di, dj in [(1,0),(0,1),(-1,0), (0,-1)]:
                 ni, nj = i+di, j+dj
                 if 0 <= ni < N and 0 <= nj < M:
-                    if visited[ni][nj][0] > visited[i][j][0] + 1 and not metrix[ni][nj]:
+                    if not visited[ni][nj][0] and not metrix[ni][nj]:
                         visited[ni][nj][0] = visited[i][j][0] + 1
                         que.append((ni,nj, metrix[ni][nj]))
     else:
@@ -38,16 +38,16 @@ def bfs(one:int, is_end:bool) -> int:
                 ni, nj = i+di, j+dj
                 if 0 <= ni < N and 0 <= nj < M:
                     if is_visit:
-                        if not metrix[ni][nj] and visited[ni][nj][1] > visited[i][j][1] + 1:
+                        if not metrix[ni][nj] and not visited[ni][nj][1]:
                             visited[ni][nj][1] = visited[i][j][1]+1
                             que.append((ni,nj,is_visit))
                     else:
                         if metrix[ni][nj]:
-                            if visited[ni][nj][1] > visited[i][j][0] +1:
+                            if not visited[ni][nj][1]:
                                 visited[ni][nj][1] = visited[i][j][0] + 1
                                 que.append((ni,nj, metrix[ni][nj]))
                         else:
-                            if visited[ni][nj][0] > visited[i][j][0]+1:
+                            if not visited[ni][nj][0] :
                                 visited[ni][nj][0] = visited[i][j][0] + 1
                                 que.append((ni,nj, metrix[ni][nj]))
                             
