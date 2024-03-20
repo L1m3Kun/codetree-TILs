@@ -43,6 +43,8 @@ def bfs(one:int, is_end:bool) -> int:
 
 if metrix[0][0] and metrix[N-1][M-1]:
     print(-1)
+elif sum(map(sum, metrix)) == 0:
+    print(N+M-1)
 elif metrix[N-1][M-1]:
     print(bfs(1, 1))
 else:
