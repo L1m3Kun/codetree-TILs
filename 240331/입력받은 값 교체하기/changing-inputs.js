@@ -2,4 +2,4 @@ const fs = require("fs");
 const input = fs.readFileSync(0).toString();
 const [a, b] = input.split(" ");
 
-console.log(b,a);
+console.log(`${b} ${a}`);
