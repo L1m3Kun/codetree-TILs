@@ -6,7 +6,7 @@ for (let y = 0 ; y < n ; y++){
 }
 for (let y=1;y<n;y++){
     for (let x=1;x<m;x++){
-        dp[y][x] = dp[y][x-1] + dp[y-1][x-1]
+        dp[y][x] = dp[y][x-1] + dp[y-1][x]
     }
 }
 
