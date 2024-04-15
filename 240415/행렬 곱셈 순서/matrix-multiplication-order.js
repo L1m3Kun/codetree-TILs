@@ -25,7 +25,7 @@ for (let cnt = 0 ; cnt <= N ; cnt++){
     for (let i = 1; i <= N-cnt ; i++){
         const j = i + cnt
         if (cnt > 0){
-            let minv = 100000
+            let minv = 500**3
             for (let p = i; p < j ; p++){
                 minv = Math.min(minv, dp[i][p]+dp[p+1][j]+nums[i-1]*nums[p]*nums[j])
             }
