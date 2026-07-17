@@ -8,10 +8,10 @@ const MAX_DIFFERENT = 100000000;
 
 // Please Write your code here.
 const dp = Array.from(
-    {length: 100},
+    {length: n},
     () => Array.from(
-        {length: 100}, 
-        () => Array(101).fill(-1)
+        {length: n}, 
+        () => Array(k+1).fill(-1)
     )
 );
 
